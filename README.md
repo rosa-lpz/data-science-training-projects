@@ -1,4 +1,4 @@
-# Data-Science-Portfolio
+# Data Science Training Projects
 
 ## Content
 ### Energy

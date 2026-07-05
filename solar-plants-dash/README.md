@@ -39,3 +39,7 @@ Data is fetched in real-time
 ## License
 
 MIT License
+
+
+## References
+* Plotly - Build a Python Dashboard with Matplotlib and Dash: https://youtu.be/dRjNfahHJRQ

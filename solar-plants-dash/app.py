@@ -13,9 +13,12 @@ from io import BytesIO
 df = pd.read_csv("https://raw.githubusercontent.com/plotly/datasets/master/solar.csv")
 
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+# Layout
 app.layout = dbc.Container([
     html.H1("Interactive Matplotlib with Dash", className='mb-2', style={'textAlign':'center'}),
 
+    # Dropdown
     dbc.Row([
         dbc.Col([
             dcc.Dropdown(
@@ -25,13 +28,14 @@ app.layout = dbc.Container([
                 options=df.columns[1:])
         ], width=4)
     ]),
-
+    # Bar graph matplotlib
     dbc.Row([
         dbc.Col([
             html.Img(id='bar-graph-matplotlib')
         ], width=12)
     ]),
-
+    
+    # Bar graph plotly and table
     dbc.Row([
         dbc.Col([
             dcc.Graph(id='bar-graph-plotly', figure={})
@@ -55,6 +59,8 @@ app.layout = dbc.Container([
     Output('grid', 'defaultColDef'),
     Input('category', 'value'),
 )
+    # In "selected_yaxis" are the options: 
+    #   "Number of Solar Plants", "Installed Capacity (MW)", "Averga MW Per plant"
 def plot_data(selected_yaxis):
 
     # Build the matplotlib figure

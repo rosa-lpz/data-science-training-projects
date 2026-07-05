@@ -1,0 +1,6 @@
+pandas
+plotly
+matplotlib
+dash
+dash-ag-grid
+dash-bootstrap-components

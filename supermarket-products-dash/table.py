@@ -1,6 +1,7 @@
 import base64
 import pandas as pd
 from dash import Dash, html, dash_table
+import dash_bootstrap_components as dbc
 
 df = pd.read_csv("data/combined.csv")
 # 1. Create a tiny mock Base64 string (a small blue square) for demonstration
@@ -23,7 +24,7 @@ df['image_rendered'] = df['image'].apply(
 )
 
 # Initialize Dash App
-app = Dash(__name__)
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 app.layout = html.Div([
     html.H2("Data Table with 400x400px Images", style={'textAlign': 'center'}),

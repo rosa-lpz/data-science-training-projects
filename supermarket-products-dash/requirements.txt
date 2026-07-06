@@ -1,5 +1,8 @@
 pandas
 plotly
 matplotlib
-dash
 pillow
+dash
+dash-ag-grid
+dash-bootstrap-components
+ 
